@@ -16,15 +16,22 @@ const login = async(req,res)=>{
             {
                 res.status(403).send({status:false,message:"Invalid email or password",error:true});
             }
-
-            const match=await user.checkPassword(req.body.password);
-            if(!match)
+            
+            try
             {
-                res.status(403).send({status:false,message:"Invalid email or password",error:true});
+                const match=await user.checkPassword(req.body.password);
+                if(!match)
+                {
+                    res.status(403).send({status:false,message:"Invalid email or password",error:true});
+                }
+                const token=generateToken();
+                res.status(200).send({status:true,token:token,message:"user login successfull",error:false});
             }
-            const token=generateToken();
-            res.status(200).send({status:true,token:token,message:"user login successfull",error:false});
-
+            catch(err)
+            {
+                res.status(500).send({status:false,message:"User could not be signed up, some error occurred",error:e.message});
+            }
+           
         }
         catch(e)
         {

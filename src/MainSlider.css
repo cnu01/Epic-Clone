@@ -27,7 +27,8 @@ body {
   width: 50%;
   position: absolute;
   top: 0px;
-  padding-left: 5%;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top: 10%;
   background-image: linear-gradient(
     to right,
@@ -138,7 +139,16 @@ body {
   padding-left: 5%;
   color: white;
 }
-
+@media only screen and (max-width: 1205px) {
+  .myswiper_content {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 754px) {
+  .myswiper_content {
+    width: 90%;
+  }
+}
 @media only screen and (max-width: 650px) {
   #slider_right {
     display: none;

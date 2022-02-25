@@ -1,14 +1,20 @@
 import React from 'react'
 import{useEffect, useState} from "react"
 import "./GameCard.css"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+  
 
 
-
-function GameCard({data}) {
+function GameCard({data,key}) {
 const [game, setGame] = useState(null)
   const url = "http://localhost:2345/games"
 
-  const getdata = async({data}) => {
+  const getdata = async() => {
     try {    
       let response = await fetch(url);
       let data = await response.json()

@@ -1,12 +1,12 @@
 import React from 'react'
 import{useEffect, useState} from "react"
 import GameCard from './GameCard'
-
+import TopGames from './TopGames'
 import "./GameSection.css"
 import GameSale from './GameSale'
 import FreeCardContainer from './FreeCardContainer'
 import Group from './Group'
-function GmaeSection() {
+function GmaeSection2() {
   const [game, setGame] = useState(null)
   const url = "http://localhost:2345/games"
 
@@ -27,14 +27,13 @@ function GmaeSection() {
   return (
     <div className='game-cont'>
       <div>
-      {game && game.slice(0, 5).map((item) => {
-        return <GameCard data={item}/>
+      {game && game.slice(5, 10).map((item) => {
+        return <GameSale data={item}/>
       }) 
       }
-
     </div>
     </div>
   )
 }
 
-export default GmaeSection
+export default GmaeSection2

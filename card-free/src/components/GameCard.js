@@ -29,7 +29,7 @@ const [game, setGame] = useState(null)
   },[])
 
   return (
-    <Link to ="/game/{key}" >
+    <Link to ={`/game/${data._id}`} >
         <div className='game-cont'>
         <div className='new-box'>
             {/* <div className='heading'>

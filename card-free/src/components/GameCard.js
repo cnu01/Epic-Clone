@@ -13,7 +13,7 @@ import {
 function GameCard({data,key}) {
 const [game, setGame] = useState(null)
   const url = "http://localhost:2345/games"
-
+    console.log(data._id)
   const getdata = async() => {
     try {    
       let response = await fetch(url);
@@ -29,6 +29,7 @@ const [game, setGame] = useState(null)
   },[])
 
   return (
+    <Link to ="/game/{key}" >
         <div className='game-cont'>
         <div className='new-box'>
             {/* <div className='heading'>
@@ -56,7 +57,7 @@ const [game, setGame] = useState(null)
             </div>
         </div>
         </div>
-    
+        </Link>
     )
     }
    

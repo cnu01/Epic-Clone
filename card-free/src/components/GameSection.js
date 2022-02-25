@@ -19,7 +19,6 @@ function GmaeSection() {
       console.log(error)
     }
   }
-  
   useEffect(() =>{
     getdata()
   },[])
@@ -28,7 +27,7 @@ function GmaeSection() {
     <div className='game-cont'>
       <div>
       {game && game.slice(0, 5).map((item) => {
-        return <GameCard data={item} key={Math.random()}/>
+        return <GameCard data={item} key={item._id}/>
       }) 
       }
 

@@ -28,7 +28,7 @@ function GmaeSection2() {
     <div className='game-cont'>
       <div>
       {game && game.slice(5, 10).map((item) => {
-        return <GameSale data={item} key={Math.random()}/>
+        return <GameSale data={item} key={item._id}/>
       }) 
       }
     </div>

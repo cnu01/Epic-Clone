@@ -1,0 +1,126 @@
+.video-div {
+  width: min-content;
+}
+.video-img {
+  width: 1000px;
+}
+.game-video {
+  display: flex;
+}
+.game-intro{
+    width: 70%;
+}
+.plat-logo{
+  width: 30px;
+}
+.singleGame-detail {
+  margin-left: 24px;
+}
+.thumbnail{
+  display: flex;
+  justify-content: center;
+}
+.thumbnail img{
+width: 200px;
+
+}
+.Genres{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-left: 10px;
+}
+.G-1{
+    border-left:1px solid silver;
+    padding-left: 16px;
+}
+.get-btn {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  position: relative;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  line-height: 15px;
+  padding: 0px 20px;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  min-width: auto;
+  background-color: rgb(235, 206, 118);
+  color: rgb(0, 0, 0);
+  width: 320px;
+  transition: ease-in-out;
+  
+  font-size: 16px;
+}
+
+.get-btn:hover {
+  background-color: #f3e4b6;
+  transition: ease-in-out;
+}
+.add-btn{
+    display: flex;
+    font-size: 16px;
+    width: 100%;
+    min-width: auto;
+    background-color: transparent;
+    color: rgb(245, 245, 245);
+    border: 1px solid rgba(245, 245, 245, 0.6);
+    justify-content: center;
+    line-height: 15px;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    border-radius: 4px;
+    align-items: center;
+    margin-top: 16px;
+}
+.add-btn:hover{
+    background-color: #a1a09a4b;
+  transition: ease-in-out;
+}
+.wishlist-btn{
+    display: flex;
+    width: 100%;
+    min-width: auto;
+    background-color: transparent;
+    color: rgb(245, 245, 245);
+    border: 1px solid rgba(245, 245, 245, 0.6);
+    justify-content: center;
+    line-height: 15px;
+    padding: 0 20px;
+    height: 34px;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+}
+.wishlist-btn:hover{
+    background-color: #a1a09a4b;
+}
+.game-info{
+    margin-top: 24px;
+}
+.game-info-div{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    border-bottom: 1px solid silver;
+}
+.game-info-name{
+    color: #6B6B6B;
+}
+.game-title{
+    color: white;
+
+}
+.single-main{
+    display: grid;
+    place-content: center;
+}

@@ -71,11 +71,10 @@ body {
 .remember .input span {
   margin-left: 10px;
 }
-
-.terms {
+.terms span {
   text-decoration: underline;
+  color: azure;
 }
-
 .remember .forgot {
   font-size: 14px;
 

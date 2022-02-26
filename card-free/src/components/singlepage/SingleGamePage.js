@@ -1,6 +1,12 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import "./SingleGame.css"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 function SingleGamePage({info}) {
     const [game, setGame] = useState([])
     const url = `http://localhost:2345/games/${info}`
@@ -52,14 +58,14 @@ function SingleGamePage({info}) {
                       <div className='thumbnail'>
                          <img src={game.thumbnail}></img>
                       </div>
-                      <div className='price'>
+                      <div className='single-price'>
                       <div className='discount'>-30%</div>
                            <span className='spanone'>₹999</span>
                            <span>₹599</span>
                       </div>
                       <div className='video-side'>
-                          <button className='get-btn'>Get</button>
-                          <button className='add-btn'>Add to cart</button>
+                          <button className='get-btn'> <Link to="/" className='addcart-link'>Get</Link></button>
+                          <button className='add-btn'><Link to="/" className='addcart-link'>Add to cart</Link></button>
                           <button className='wishlist-btn'>Add to Wishlist</button>
                           
                       </div>

@@ -10,6 +10,14 @@
 .game-intro{
     width: 70%;
 }
+.single-price{
+  margin-bottom: 24px;
+  display: flex;
+}
+.addcart-link{
+  text-decoration: none;
+  color: white;
+}
 .plat-logo{
   width: 30px;
 }

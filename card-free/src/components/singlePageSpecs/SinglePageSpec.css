@@ -11,7 +11,9 @@
     margin: 0 2rem 0 2rem;
   
 }
-
+.spec-detail-head{
+    color: #829BA2;
+}
 #spec-head{
     text-align: center;
 }

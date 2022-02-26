@@ -3,46 +3,42 @@ import { useState,useEffect } from 'react'
 import "./SingleGame.css"
 function SingleGamePage({info}) {
     const [game, setGame] = useState([])
-    const url = "http://localhost:2345/games"
+    const url = `http://localhost:2345/games/${info}`
 
-    const getdata = async() => {
-      try {    
-        let response = await fetch(url);
-        let data = await response.json();
-        const games = data.data.filter((item) => item._id == info)
-        console.log(data)
-        setGame(games)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    console.log(info)
+    
     useEffect(() =>{
+        const getdata = async() => {
+            let response = await fetch(url);
+            let data = await response.json();
+            let games = data.data
+            setGame(games)
+        }
       getdata()
     },[])
+
     console.log(game)
 
-    if(game.length !== 0){
+    
         return (
           <div className='single-main'>
               <div className='game-title'>
-                  <h1>{game[0].title}</h1>
+                  <h1>{game.title}</h1>
               </div>
               <div className='game-video'>
                   <div className='video-div'>
-                      <img className='video-img' src={game[0].cardImage}></img>
+                      <img className='video-img' src={game.heroImages}></img>
                       <div>
                               <div className='game-intro'>
-                                 <h3>{game[0].description}</h3>
+                                 <h3>{game.description}</h3>
                               </div>
                               <div className='Genres'>
                               <div className='G-1'>
                                   <p>Genres</p>
-                                  <h3>{game[0].genres}</h3>
+                                  <h3>{game.genres}</h3>
                               </div>
                               <div className='G-1'>
                                   <p>Features</p>
-                                  <h3>{game[0].gameFeatures}</h3>
+                                  <h3>{game.features}</h3>
                               </div>
                               </div>
                           </div>
@@ -53,10 +49,14 @@ function SingleGamePage({info}) {
                           </div>
                   </div>
                   <div className='singleGame-detail'>
-                      <div>
-                         <img src={game.logo}></img>
+                      <div className='thumbnail'>
+                         <img src={game.thumbnail}></img>
                       </div>
-                      <div>Game Price</div>
+                      <div className='price'>
+                      <div className='discount'>-{game.price.discountPercentage}%</div>
+                           <span className='spanone'>₹{game.price.mainPrice}</span>
+                           <span>₹{game.price.discountedPrice}</span>
+                      </div>
                       <div className='video-side'>
                           <button className='get-btn'>Get</button>
                           <button className='add-btn'>Add to cart</button>
@@ -66,15 +66,15 @@ function SingleGamePage({info}) {
                       <div className='game-info'>
                           <div className='game-info-div'>
                               <p className='game-info-name'>Developer</p>
-                              <p>starbreezestudiosab</p>
+                              <p>{game.developer}</p>
                           </div>
                           <div className='game-info-div'>
                               <p className='game-info-name'>Publisher</p>
-                              <p>505 Games</p>
+                              <p>{game.publisher}</p>
                           </div>
                           <div className='game-info-div'>
                               <p className='game-info-name'>Release Date</p>
-                              <p>2/15/22</p>
+                              <p>{game.releaseDate}</p>
                           </div>
                           <div className='game-info-div'>
                               <p className='game-info-name'>Initial Release</p>
@@ -82,7 +82,9 @@ function SingleGamePage({info}) {
                           </div>
                           <div className='game-info-div'>
                               <p className='game-info-name'>Platform</p>
-                              <p>Windows</p>
+                              <p>
+                                <img className='plat-logo' src={game.platform}></img>
+                                </p>
                           </div>
                       </div>
                   </div>
@@ -90,9 +92,7 @@ function SingleGamePage({info}) {
           </div>
          
         ) 
-    }else{
-        console.log("empty")
     }
-}
+
 
 export default SingleGamePage

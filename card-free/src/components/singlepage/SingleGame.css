@@ -10,8 +10,19 @@
 .game-intro{
     width: 70%;
 }
+.plat-logo{
+  width: 30px;
+}
 .singleGame-detail {
   margin-left: 24px;
+}
+.thumbnail{
+  display: flex;
+  justify-content: center;
+}
+.thumbnail img{
+width: 200px;
+
 }
 .Genres{
     display: flex;

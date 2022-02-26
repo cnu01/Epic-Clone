@@ -1,6 +1,21 @@
 import React from 'react'
 import "./SinglePageSpec.css"
+import { useState,useEffect } from 'react'
 function SinglePageSpecs() {
+    // const [game, setGame] = useState([])
+    // const url = `http://localhost:2345/games/${info}`
+
+    
+    // useEffect(() =>{
+    //     const getdata = async() => {
+    //         let response = await fetch(url);
+    //         let data = await response.json();
+    //         let games = data.data
+    //         setGame(games)
+    //     }
+    //   getdata()
+    // },[])
+
   return (
     <div className='spec-section'>
         <div className='follow-sec'>
@@ -24,28 +39,24 @@ function SinglePageSpecs() {
                         <h3>Minimum</h3>
                     </div>
                     <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Windows 7</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Processor</p>        
+                    <p>Intel Core i5-3570K </p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>memory</p>        
+                    <p>8 GB RAM</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>graphics</p>        
+                    <p>NVIDIA GeForce GTX780</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Storage</p>        
+                    <p>70 GB[SSD recommended]</p>        
                     </div>
-                    <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
-                </div>
                 </div>
                 <div className='recommended'>
                 <div>
@@ -53,28 +64,25 @@ function SinglePageSpecs() {
                     <h3>Recommended</h3>
                 </div>
                     <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Windows 10</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Processor</p>        
+                    <p>Intel Core i7-4790 or AMD Ryzen 3 3200G</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Memory</p>        
+                    <p>12DB Ram</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Graphics</p>        
+                    <p>NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury</p>        
                     </div>
                     <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
+                    <p>Storage</p>        
+                    <p>200GB</p>        
                     </div>
-                    <div>
-                    <p>Os</p>        
-                    <p>Windows</p>        
-                </div>
+
                 </div>
             </div>
             <div className='language'>

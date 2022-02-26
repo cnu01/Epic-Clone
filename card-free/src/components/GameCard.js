@@ -13,7 +13,7 @@ import {
 function GameCard({data,key}) {
 const [game, setGame] = useState(null)
   const url = "http://localhost:2345/games"
-    console.log(data._id)
+ 
   const getdata = async() => {
     try {    
       let response = await fetch(url);

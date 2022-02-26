@@ -1,7 +1,31 @@
 import React from 'react'
 import "./GameCard.css"
+import{useEffect, useState} from "react"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 function GameSale({data}) {
+    const [game, setGame] = useState(null)
+  const url = "http://localhost:2345/games"
+  
+  const getdata = async() => {
+    try {    
+      let response = await fetch(url);
+      let data = await response.json()
+      setGame(data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  useEffect(() =>{
+    getdata()
+  },[])
   return (
+    <Link to ={`/game/${data._id}`} >
     <div>
         <div className='new-box'  id='last'>
         {/* <div className='heading'>
@@ -29,6 +53,7 @@ function GameSale({data}) {
         </div>
     </div>
     </div>
+    </Link>
   )
 }
 

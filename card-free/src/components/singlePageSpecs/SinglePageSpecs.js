@@ -36,38 +36,38 @@ function SinglePageSpecs() {
                 <div className='minimum'>
                 <div>
                     <div>
-                        <h3>Minimum</h3>
+                        <h3 className='spec-detail-head'>Minimum</h3>
                     </div>
-                    <p>Os</p>        
+                    <p className='spec-detail-head'>Os</p>        
                     <p>Windows 7</p>        
                     </div>
                     <div>
-                    <p>Processor</p>        
+                    <p className='spec-detail-head'>Processor</p>        
                     <p>Intel Core i5-3570K </p>        
                     </div>
                     <div>
-                    <p>memory</p>        
+                    <p className='spec-detail-head'>memory</p>        
                     <p>8 GB RAM</p>        
                     </div>
                     <div>
-                    <p>graphics</p>        
+                    <p className='spec-detail-head'>graphics</p>        
                     <p>NVIDIA GeForce GTX780</p>        
                     </div>
                     <div>
-                    <p>Storage</p>        
+                    <p className='spec-detail-head'>Storage</p>        
                     <p>70 GB[SSD recommended]</p>        
                     </div>
                 </div>
                 <div className='recommended'>
                 <div>
                 <div>
-                    <h3>Recommended</h3>
+                    <h3 className='spec-detail-head'>Recommended</h3>
                 </div>
-                    <p>Os</p>        
+                    <p className='spec-detail-head'>Os</p>        
                     <p>Windows 10</p>        
                     </div>
                     <div>
-                    <p>Processor</p>        
+                    <p className='spec-detail-head'>Processor</p>        
                     <p>Intel Core i7-4790 or AMD Ryzen 3 3200G</p>        
                     </div>
                     <div>

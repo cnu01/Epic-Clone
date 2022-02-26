@@ -52,7 +52,7 @@ function SingleGamePage({info}) {
                       <div className='thumbnail'>
                          <img src={game.thumbnail}></img>
                       </div>
-                      <div className='price'>
+                      <div className='single-price'>
                       <div className='discount'>-30%</div>
                            <span className='spanone'>₹999</span>
                            <span>₹599</span>

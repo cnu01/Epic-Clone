@@ -10,6 +10,10 @@
 .game-intro{
     width: 70%;
 }
+.single-price{
+  margin-bottom: 24px;
+  display: flex;
+}
 .plat-logo{
   width: 30px;
 }

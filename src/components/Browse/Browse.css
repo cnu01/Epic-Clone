@@ -1,0 +1,36 @@
+.main-contain {
+  display: flex;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.left-side {
+  width: 90%;
+}
+.right-side {
+  width: 20%;
+
+  margin-left: -5%;
+}
+
+input {
+  color: #9c9d9c;
+  background-color: #202020;
+  border: none;
+  height: 30px;
+}
+
+hr {
+  color: #9c9d9c;
+}
+button {
+  display: flex;
+  flex-direction: row;
+  color: #9c9d9c;
+  background-color: black;
+  border: none;
+  margin-top: 5%;
+  cursor: pointer;
+}
+h4 {
+  color: #9c9d9c;
+}

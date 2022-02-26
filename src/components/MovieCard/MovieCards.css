@@ -1,12 +1,23 @@
 .main-contain {
   /* border: 1px solid red; */
   display: flex;
-  gap: 2%;
-  justify-content: center;
+  gap: -5%;
   margin-top: 5px;
 }
 
 .contain {
   margin-top: 5px;
   /* border: 1px solid green; */
+  width: 20%;
+}
+.contain .boxes img {
+  width: 70%;
+  height: 300px;
+
+  border-radius: 4%;
+}
+p {
+  font-size: 300;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: -2%;
 }

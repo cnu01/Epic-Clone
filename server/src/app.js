@@ -7,6 +7,6 @@ app.use(express.json());
 app.use("/login",login);
 app.use("/signup",signup);
 app.use("/games",gameController);
-
+app.use("/games/:id",gameController);
 
 module.exports=app;

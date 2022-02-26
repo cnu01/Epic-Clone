@@ -14,13 +14,19 @@ export const Navbar = () => {
             <a>
                 <span>News</span>
             </a>
+            <a>
+                <span>Wishlist</span>
+            </a>
+            <a>
+                <span>Cart</span>
+            </a>
         </Nav>
     )
 }
 
 
 const Nav = styled.nav`
-width:100%;
+width:98.3%;
 // border:1px solid red;
 background:rgb(18, 18, 18);
 margin:auto;

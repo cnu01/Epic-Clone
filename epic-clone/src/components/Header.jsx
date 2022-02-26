@@ -46,7 +46,8 @@ const Navbar = styled.nav`
     display: flex;
     align-items: center;
     padding: 0px 32px;
-    overflow-x: hidden;  
+    overflow-x: hidden; 
+    // width:100%; 
 `
 
 const Logo = styled.img`
@@ -68,6 +69,9 @@ a {
     align-items: center;
     padding: 0 14px;
     cursor: pointer;
+}
+a:hover{
+    border-bottom:2px solid blue;
 }
 span {
         font-size: 10px;

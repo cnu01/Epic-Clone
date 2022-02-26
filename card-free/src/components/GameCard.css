@@ -77,6 +77,7 @@
     color: white;
 }
 .price{
+    margin: 50px 0 24px 0;
     display: flex;
 }
 .discount{

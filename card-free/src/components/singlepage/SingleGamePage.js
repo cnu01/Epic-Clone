@@ -53,9 +53,9 @@ function SingleGamePage({info}) {
                          <img src={game.thumbnail}></img>
                       </div>
                       <div className='price'>
-                      <div className='discount'>-{game.price.discountPercentage}%</div>
-                           <span className='spanone'>₹{game.price.mainPrice}</span>
-                           <span>₹{game.price.discountedPrice}</span>
+                      <div className='discount'>-30%</div>
+                           <span className='spanone'>₹999</span>
+                           <span>₹599</span>
                       </div>
                       <div className='video-side'>
                           <button className='get-btn'>Get</button>

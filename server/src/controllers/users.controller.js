@@ -24,7 +24,7 @@ const login = async(req,res)=>{
                 {
                     res.status(403).send({status:false,message:"Invalid email or password",error:true});
                 }
-                const token=generateToken();
+                const token=generateToken(user._id);
                 res.status(200).send({status:true,token:token,message:"user login successfull",error:false});
             }
             catch(err)

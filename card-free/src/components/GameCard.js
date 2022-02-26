@@ -43,7 +43,7 @@ const [game, setGame] = useState(null)
             <div className='game-card'>
                 <div className='game-content'>
                     <div className='img-div'>
-                        <img className='game-img' src={data.cardImage}></img>
+                        <img className='game-img' src={data.heroImages[0]}></img>
                     </div>
                     <div className='game-detail'>
                         <p>{data.title}</p>

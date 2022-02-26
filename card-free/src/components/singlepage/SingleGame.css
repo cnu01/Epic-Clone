@@ -14,6 +14,10 @@
   margin-bottom: 24px;
   display: flex;
 }
+.addcart-link{
+  text-decoration: none;
+  color: white;
+}
 .plat-logo{
   width: 30px;
 }

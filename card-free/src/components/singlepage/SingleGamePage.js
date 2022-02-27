@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import "./SingleGame.css"
+import axios from "axios"
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,8 +11,8 @@ import {
 function SingleGamePage({info}) {
     const [game, setGame] = useState([])
     const url = `http://localhost:2345/games/${info}`
-
-    
+    const url2 = "http://localhost:2345/cart"
+    const url3 = "http://localhost:2345/wishlist"
     useEffect(() =>{
         const getdata = async() => {
             let response = await fetch(url);
@@ -21,9 +22,21 @@ function SingleGamePage({info}) {
         }
       getdata()
     },[])
-
+   
     console.log(game)
+    const handleCart =() => axios.post(url2,{game_id:info}, {
+        headers: {
+          Authorization: localStorage.getItem("token") //the token is a variable which holds the token
+        }
 
+       })
+       
+       const handleWish = () => axios.post(url3,{game_id:info}, {
+        headers: {
+          Authorization: localStorage.getItem("token") //the token is a variable which holds the token
+        }
+
+       })
     
         return (
           <div className='single-main'>
@@ -65,8 +78,8 @@ function SingleGamePage({info}) {
                       </div>
                       <div className='video-side'>
                           <button className='get-btn'> <Link to="/" className='addcart-link'>Get</Link></button>
-                          <button className='add-btn'><Link to="/" className='addcart-link'>Add to cart</Link></button>
-                          <button className='wishlist-btn'>Add to Wishlist</button>
+                          <button className='add-btn' onClick={handleCart}>Add to cart</button>
+                          <button className='wishlist-btn' onClick={handleWish}>Add to Wishlist</button>
                           
                       </div>
                       <div className='game-info'>

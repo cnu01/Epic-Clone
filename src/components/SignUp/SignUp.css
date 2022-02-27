@@ -1,0 +1,127 @@
+.signup_main {
+  padding: 40px;
+}
+.signup_card {
+  width: 25vw;
+  border-radius: 8px;
+  padding: 40px 60px;
+  background-color: #202020;
+  margin: auto;
+}
+
+.signup_card .logo img {
+  width: 17%;
+}
+.signup_card .logo {
+  text-align: center;
+}
+.signup_card .title {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.signup_title p {
+  color: #fff;
+  font-size: 14px;
+}
+
+.signup_input-container .signup_inputBox {
+  display: flex;
+  gap: 4%;
+}
+
+.signup_input-container {
+  margin-top: 20px;
+}
+.signup_input-container input {
+  width: 100%;
+  font-weight: 500;
+  height: 40px;
+  background-color: #202020;
+  outline: none;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 6px;
+  margin: 12px 0px;
+  padding: 10px;
+}
+
+.signup_remember {
+  margin-top: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.signup_remember .signup_input {
+  font-size: 14px;
+  color: #f4f4f480;
+}
+.signup_remember .signup_input span {
+  margin-left: 10px;
+}
+.signup_terms span {
+  text-decoration: underline;
+  color: azure;
+}
+.signup_remember .signup_forgot {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.signup_continueBtn {
+  margin-top: 30px;
+}
+
+.signup_continueBtn button {
+  width: 100%;
+  height: 54px;
+  background-color: #104a82;
+  color: #f4f4f480;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.signup_privacy {
+  margin-top: 25px;
+  text-decoration: underline;
+  color: #fff;
+  text-align: center;
+}
+
+.signup_new {
+  color: #f4f4f480;
+  text-align: center;
+}
+
+.signup_new .acc {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.signup_acc span {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.signup_p2 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.signup_p2 a {
+  text-decoration: underline;
+  color: #fff;
+  cursor: pointer;
+}
+
+#signup_error {
+  font-weight: 100;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: red;
+  text-align: center;
+}

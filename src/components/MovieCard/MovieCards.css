@@ -1,0 +1,12 @@
+.main-contain {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.contain {
+  margin-top: 5px;
+  /* border: 1px solid green; */
+}

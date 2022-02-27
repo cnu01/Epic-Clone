@@ -1,4 +1,4 @@
-import "../MainSlider.css";
+import "./MainSlider.css";
 import { mainData } from "./MainSliderData";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -34,7 +34,9 @@ export function MainSlider()
                                         <div className="myswiper_content">
                                             <img src={slide.logo} className="myswiper_content_logo" />
                                             <p>{slide.details}</p>
+                                            <br/>
                                             <h5>Starting at &#8377; {slide.price}</h5>
+                                            <br/>
                                             <button className="myswiper_content_button">Buy Now</button>
                                             <button className="myswiper_content_button wish">
                                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 122.879 122.88" fill="white" enable-background="new 0 0 122.879 122.88">

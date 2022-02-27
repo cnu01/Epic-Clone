@@ -1,6 +1,13 @@
-export function Card({src,title,price})
+import { useNavigate } from "react-router-dom";
+
+export function Card({src,title,id,price})
 {
-    return <div className="card">
+    const navigate = useNavigate();
+    const redirectToSinglePage = ()=>{
+        console.log(id);
+         navigate(`/game/${id}`);
+    }
+    return <div className="card" onClick={()=>redirectToSinglePage(id)}>
                 <div className="poster">
                     <img src={src} />
                 </div>

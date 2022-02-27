@@ -2,12 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Browse.css";
 import { Card } from "./Card";
+import {Navbar} from '../Header/Navbar'
+import Header from '../Header/Header'
+import Footer from "../Footer/Footer"; 
+import { useNavigate } from "react-router-dom";
 
 export const Browse = () => {
   const [list, setList] = useState([]);
   const [finalList,setFinalList] = useState([]);
   const [actionList, setActionList] = useState({});
   const [sortData,setSortData] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
     getAllData();
   }, []);
@@ -74,6 +79,7 @@ export const Browse = () => {
         setList(data2); 
         setSortData("alpha");
   }
+ 
   const newRelease = ()=>{
      getAllData();
   }
@@ -109,6 +115,9 @@ export const Browse = () => {
     console.log(list);
   }
   return (
+    <div>
+      <Header/>
+      <Navbar />
     <div className="main-contain">
       <div className="left-side">
         <h4 className="h4">Sort By: 
@@ -140,7 +149,7 @@ export const Browse = () => {
         <div className="left_cards">
           {
             list.length > 0 ? list.map(item => {
-              return <Card src={item.thumbnail} title={item.title} price={item.price.mainPrice} />
+              return <Card src={item.thumbnail} id={item._id} title={item.title} price={item.price.mainPrice} />
             }) : ""
           }
         </div>
@@ -168,6 +177,8 @@ export const Browse = () => {
         }
 
       </div>
+      </div>
+      <Footer/>
     </div>
   );
 };

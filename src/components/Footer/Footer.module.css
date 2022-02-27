@@ -1,0 +1,150 @@
+.footer {
+  width: 95.5vw;
+  background-color: #202020;
+  margin-top: 50px;
+  padding-left: 3vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  gap: 10px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.lang_div {
+  padding-bottom: 20px;
+  margin-bottom: -80px;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: 400;
+}
+
+.terms {
+  text-align: center;
+}
+
+.links > p {
+  margin: 5px;
+}
+
+.footer_heading {
+  color: #616161;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.resources,
+.epicgames p {
+  font-size: 14px;
+}
+
+.epicgames {
+  margin-top: 50px;
+}
+
+.bottom_text {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.0105em;
+  color: #f5f5f5;
+  text-align: center;
+  font-weight: 300;
+}
+
+.social_links {
+  display: flex;
+  gap: 20px;
+}
+
+.icon_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.0105em;
+  color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.right {
+  gap: 10px;
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    display: flex;
+    width: 90vw;
+    margin: auto;
+  }
+
+  .lang_div {
+    padding-bottom: 100px;
+  }
+
+  .cont {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .links p:hover {
+    color: var(--main-blue);
+  }
+
+  .bottom_text {
+    width: 90vw;
+    font-size: 12px;
+    letter-spacing: 0.0105em;
+    color: #f5f5f5;
+    text-align: left;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .links > p {
+    padding: -20px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    letter-spacing: 0.0105em;
+    color: #f5f5f5;
+  }
+
+  .bottom_footer {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

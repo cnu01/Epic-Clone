@@ -13,12 +13,7 @@ route.get("/",protect,async(req,res)=>{
        if(user.wishlist.length>0)
        {
             const wishlist=user.wishlist.map(async(item)=>{
-                const games = await Games.findById({_id:item},(err,docs)=>{
-                    if(err)
-                    {
-                        console.log(err)
-                    }    
-                }).lean().exec();
+                const games = await Games.findById({_id:item}).lean().exec();
 
                 return games;
             });

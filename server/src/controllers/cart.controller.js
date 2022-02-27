@@ -7,35 +7,11 @@ const protect=require('../middleware/protect')
 route.get("/",protect,async(req,res)=>{
     try
     {
-       const user = await Users.findById({_id:req.body.user_id},(err,docs)=>{
-            if(err)
-            {
-                res.status(403).send({status:false,message:"User not authenticated",error:true});
-            }
-       });
-
-       if(user.orders.length>0)
-       {
-            const cart=user.orders.map(async(item)=>{
-                const games = await Games.findById({_id:item},(err,docs)=>{
-                    if(err)
-                    {
-                        console.log(err)
-                    }    
-                }).lean().exec();
-
-                return games;
-            });
-            if(!cart)
-            {
-                res.status(500).send({status:false,message:"Data could not be fetched",error:true});
-            }
-
-            res.status(200).send({status:true,data:cart,message:"Cart fetched successfully",error:false});
-       }
+        const user = await Users.findById(req.body.user_id).lean().exec();
+        res.status(200).send({status:true,data:user.orders,message:"Cart fetched successfully",error:false});
 
     }
-    catch(e)
+    catch(err)
     {
         res.status(500).send({status:false,message:"Data could not be fetched",error:true});
     }

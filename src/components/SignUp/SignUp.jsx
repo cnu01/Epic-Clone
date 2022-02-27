@@ -3,11 +3,17 @@ import "./SignUp.css";
 import { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
 const SignUp = () => {
  
       const [inputData,setInputData] =  useState({});
       const [isError,setIsError] = useState(false);
-      // const navigate = useNavigate();
+       const navigate = useNavigate();
       const inputChange = (e)=>{
           const {name,value} = e.target;
           setInputData((prev)=>{
@@ -23,7 +29,7 @@ const SignUp = () => {
                   console.log(data);
                   localStorage.setItem("token","Bearer "+data.token);
                   setIsError(false);
-                    // navigate('/home');
+                     navigate('/');
                 }
                 else
                 {
@@ -35,7 +41,7 @@ const SignUp = () => {
           })
       }
   return (
-    <div>
+    <div className="signup_main">
       <form onSubmit={(e)=>{
             e.preventDefault();
             submitForm();
@@ -43,56 +49,56 @@ const SignUp = () => {
         <div className="logo">
           <img src="https://raw.githubusercontent.com/mansisindhu/epic-games/f4eed54dfd6e0d2bc890518366b048ec20b2b72e/public/icons/Epic_Games_white.svg" />
         </div>
-        <div className="title">
-          <p>Sign Up</p>
+        <div className="signup_title">
+          <p>&nbsp;Sign Up</p>
         </div>
-        <div className="input-container">
-          <div className="inputBox">
+        <div className="signup_input-container">
+          <div className="signup_inputBox">
             <input onChange={(e)=>inputChange(e)} name="firstName" type="text" placeholder="First Name *" />
             <input onChange={(e)=>inputChange(e)} name="lastName" type="text" placeholder="Last Name *" />
           </div>
-          <div className="inputBox">
+          <div className="signup_inputBox">
             <input onChange={(e)=>inputChange(e)} name="displayName" type="text" placeholder="Display Name *" />
           </div>
-          <div className="inputBox">
+          <div className="signup_inputBox">
             <input onChange={(e)=>inputChange(e)} name="email" type="text" placeholder="Email Address *" />
           </div>
-          <div className="inputBox">
+          <div className="signup_inputBox">
             <input onChange={(e)=>inputChange(e)} name="password" type="password" placeholder="Password *" />
           </div>
         </div>
-        <div className="remember">
-          <div className="input">
+        <div className="signup_remember">
+          <div className="signup_input">
             <input type="checkbox" />
-            <span>
+            &nbsp;
               I would like to receive news, surveys and special offers from Epic
               Games.
-            </span>
+           
           </div>
         </div>
-
-        <div className="remember">
-          <div className="input">
+      <br/>
+        <div className="signup_remember">
+          <div className="signup_input">
             <input type="checkbox" />
-            <span className="terms">
-              I have read and agree to the <span>terms of service</span>
-            </span>
+            <a className="signup_terms">&nbsp;
+              I have read and agree to the terms of service
+            </a>
           </div>
         </div>
-        <div className="continueBtn">
+        <div className="signup_continueBtn">
         {
           isError?<a><h3 id="signup_error">Something is wrong! try again</h3><br/></a>:""
         }
           <button type="Submit">CONTINUE</button>
         </div>
-        <div className="privacy">
+        <div className="signup_privacy">
           <p>Privacy Policy</p>
         </div>
-        <div className="new">
-          <p className="acc">
-            Don't have an Epic Games Account ? <span>SignUp</span>
+        <div className="signup_new">
+          <p className="signup_acc">
+           Have an Epic Games Account ? <Link to="/login"><span>Login</span></Link>
           </p>
-          <p className="p2">
+          <p className="signup_p2">
             Back to <a href="#">all sign up options</a>
           </p>
         </div>

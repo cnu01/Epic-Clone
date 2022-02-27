@@ -1,0 +1,118 @@
+.css-cvmfyy {
+    display: block;
+    line-height: 0;
+    width: 80px;
+    height: 80px;
+    color: rgb(58, 58, 58);
+    margin:auto;
+}
+*{
+    background-color:#121212;
+}
+.Mycart-text{
+    margin-top:100px;
+    margin-left: 15%;
+    color:#F5F5F5;
+    margin-bottom:2%;
+}
+
+.class-of-cart-empty{
+    color:#F5F5F5;
+    font-weight:lighter;
+    margin-bottom:15px;
+    margin-left:45%;
+    margin-top: 50px;
+}
+
+.cart-shop-games{
+    margin-left:46%;
+}
+
+.Main-Div-data-Pushing{
+    
+    display:grid;
+    width:40%;
+    justify-content: center;
+    height:200px;
+}
+
+.img-Cart-page-push{
+    width:20%;
+    height:10em;
+}
+
+.div-for-push-grid{
+    width:98%;
+    margin-bottom: 20px;
+   
+}
+.data-for-flex-show{
+    display: inline-block;
+    color: white;
+}
+
+.btn-for-not-flex{
+    display: block;
+    width: 70px;
+    height: 30px;
+    margin-left:80%;
+    color: white;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.6);
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.div-for-div-two-divs{
+    display:flex;
+}
+
+.Div-for-left-Data-Page{
+   
+    margin-left:30px;
+    width:30%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+}
+
+.div-for-push-grid-main {
+    width:50%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+    0 2px 4px rgba(0,0,0,0.07), 
+    0 4px 8px rgba(0,0,0,0.07), 
+    0 8px 16px rgba(0,0,0,0.07),
+    0 16px 32px rgba(0,0,0,0.07), 
+    0 32px 64px rgba(0,0,0,0.07);
+}
+.display-flex-as-one-index{
+    display: flex;
+    justify-content: space-between;
+    color:white;
+}
+.div-for-divide-the-data{
+    margin-left:10%;
+    margin-right: 10%;
+}
+.Button-checkout{
+    cursor: pointer;
+    border: 1px solid #3498db;
+    background-color: transparent;
+    height: 50px;
+    width: 200px;
+    color: #3498db;
+    font-size: 1.5em;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+.div-for-display-price-img-as-flex{
+    
+    display: flex;
+    justify-content: space-between;
+}

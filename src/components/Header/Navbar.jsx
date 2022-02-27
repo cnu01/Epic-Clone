@@ -1,4 +1,9 @@
-
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+  } from 'react-router-dom';
 import styled from 'styled-components'
 
 export const Navbar = () => {
@@ -6,33 +11,32 @@ export const Navbar = () => {
         <Nav>
             <Search placeholder='Search'></Search>
             <a>
-                <span>Discover</span>
+            <Link to="/">Discover</Link>
             </a>
             <a>
-                <span>Browse</span>
+            <Link to="/browse">Browse</Link>
             </a>
+            
             <a>
-                <span>News</span>
+            <Link to="/wishlist">Wishlist</Link>
+               
             </a>
-            <a>
-                <span>Wishlist</span>
-            </a>
-            <a>
-                <span>Cart</span>
-            </a>
+            <Link to="/cart">Cart</Link>
         </Nav>
     )
 }
 
 
 const Nav = styled.nav`
-width:100%;
+width:80%;
 // border:1px solid red;
 background:rgb(18, 18, 18);
+height:50px;
 margin:auto;
 padding:10px;
 display:flex;
 align-items:center;
+margin-top: 10px;
 // justify-content:center;
 gap:15px;
   position: sticky;

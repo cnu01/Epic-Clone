@@ -9,7 +9,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-const SignUp = () => {
+export const SignUp = () => {
  
       const [inputData,setInputData] =  useState({});
       const [isError,setIsError] = useState(false);
@@ -107,4 +107,3 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;

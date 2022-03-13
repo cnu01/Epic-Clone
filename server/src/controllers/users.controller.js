@@ -29,7 +29,7 @@ const login = async(req,res)=>{
             }
             catch(err)
             {
-                res.status(500).send({status:false,message:"User could not be signed up, some error occurred",error:e.message});
+                res.status(500).send({status:false,message:"User could not be signed up, some error occurred",error:err.message});
             }
            
         }

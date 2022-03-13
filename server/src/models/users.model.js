@@ -1,18 +1,13 @@
 const mongoose = require("mongoose");
 const bcrypt=require('bcrypt');
-const userSchema = new mongoose.Schema(
-  {
+const userSchema = new mongoose.Schema({
     firstName: { type: String,required:true},
     lastName: { type: String,required:true},
     displayName: { type: String,required:false},
     email: { type: String, required: true,unique:true},
     password:{type:String,required:true},
-    orders: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "games", required: false },
-    ],
-    wishlist: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "games", required: false },
-    ],
+    orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "games" }],
+    wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "games"}],
   },
   {
     versionKey: false,

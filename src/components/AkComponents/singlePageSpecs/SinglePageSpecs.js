@@ -19,19 +19,12 @@ function SinglePageSpecs() {
 
   return (
     <div className='spec-section'>
-        <div className='follow-sec'>
-            <h3 id="followUs">Follow us</h3>
-            <div className='follow-sec-icon'>
-                <div>FB</div>
-                <div>Twitter</div>
-                <div>Insta</div>
-            </div>
-        </div>
+       
         <div>
-            <h3 id="spec-head">Specification</h3>
+            <h3 id="spec-head">Specifications</h3>
         <div className='spec-inside'>
             <div>
-                <h4>WINDOWS</h4>
+                <h4 className='os-dependency'>WINDOWS</h4>
             </div>
             <div className='spec-compare'>
                 <div className='minimum'>

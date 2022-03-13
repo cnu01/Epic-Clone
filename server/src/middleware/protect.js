@@ -11,10 +11,16 @@ const verifyToken = (token)=>{
         
 }
 const protect = async(req,res,next)=>{
-        const bearer = req.headers.authorization;
-        if(!bearer || bearer.startsWith("bearer "))
+    
+        if(!req?.headers?.authorization)
         {
-            res.status(403).send({status:false,message:"User not authenticated",error:true});
+           return res.status(403).send({status:false,message:"User not authenticated",error:true});
+        }
+        const bearer = req.headers.authorization;
+        
+        if(!bearer.startsWith("Bearer "))
+        {
+           return res.status(403).send({status:false,message:"User not authenticated",error:true});
         }
         const token = bearer.split("Bearer ")[1].trim();
         let payload;
@@ -25,7 +31,7 @@ const protect = async(req,res,next)=>{
         }
         catch(e)
         {
-            res.status(403).send({status:false,message:"User not authenticated",error:true});
+           return res.status(403).send({status:false,message:"User not authenticated",error:true});
         }
         next();
 }

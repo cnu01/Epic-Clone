@@ -82,6 +82,7 @@
 .poster {
   height: 250px;
   width: 100%;
+  cursor: pointer;
 }
 .poster > img {
   height: 100%;

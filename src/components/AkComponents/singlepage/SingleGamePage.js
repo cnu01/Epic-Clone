@@ -8,10 +8,12 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useNavigate
   } from "react-router-dom";
 function SingleGamePage({info}) {
-    const [game, setGame] = useState([])
+    const [game, setGame] = useState([]);
+    const navigate = useNavigate();
     const url = `http://localhost:2345/games/${info}`
     const url2 = "http://localhost:2345/cart"
     const url3 = "http://localhost:2345/wishlist"
@@ -25,12 +27,23 @@ function SingleGamePage({info}) {
       getdata()
     },[])
    
-    console.log(game)
+    // console.log(game)
     const handleCart =() => axios.post(url2,{game_id:info}, {
         headers: {
           Authorization: localStorage.getItem("token") 
         }
 
+       }).then(res=>{
+           console.log("res",res);
+       }).catch(err=>{
+            if(err.response.status===403)
+            {
+                navigate('/login');
+            }
+            else
+            {
+                alert("Some error occurred");
+            }
        })
        
        const handleWish = () => axios.post(url3,{game_id:info}, {
@@ -51,11 +64,12 @@ function SingleGamePage({info}) {
               </div>
               <div className='game-video'>
                   <div className='video-div'>
-                      <img className='video-img' src={game.heroImages}></img>
+                      <img className='video-img' src={game.images==undefined?"":game.images[1]}></img>
                       <div>
                               <div className='game-intro'>
-                                 <h3>{game.description}</h3>
+                                 <p>{game.description}</p>
                               </div>
+                              <br/>
                               <div className='Genres'>
                               <div className='G-1'>
                                   <p>Genres</p>
@@ -66,6 +80,7 @@ function SingleGamePage({info}) {
                                   <h3>{game.features}</h3>
                               </div>
                               </div>
+                              <br/>
                           </div>
                           <div className='about-game'>
                           <p>
@@ -75,12 +90,12 @@ function SingleGamePage({info}) {
                   </div>
                   <div className='singleGame-detail'>
                       <div className='thumbnail'>
-                         <img src={game.thumbnail}></img>
+                         <img src={game.logo}></img>
                       </div>
+                      <br/>
+                      <br/>
                       <div className='single-price'>
-                      <div className='discount'>-30%</div>
-                           <span className='spanone'>₹999</span>
-                           <span>₹599</span>
+                           <span>₹{game.price==undefined?"":game.price.mainPrice}</span>
                       </div>
                       <div className='video-side'>
                           <button className='get-btn'> <Link to="/" className='addcart-link'>Get</Link></button>

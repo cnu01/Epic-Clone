@@ -21,7 +21,7 @@ export const Browse = () => {
   const getAllData = () => {
     axios.get("http://localhost:2345/games", {
       headers: {
-        Authorization: 'Bearer ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjIxNjY3ZDdhMzhiOGM4MjVkNDQ2M2QyIiwiaWF0IjoxNjQ1ODc3NDk2fQ.SLqPFPS6NVn_V5feCcSY8v0zfBb6gb7Ohzl96lQIQws"
+        Authorization:localStorage.getItem("token")
       }
     }).then((res) => res.data).then(({ data }) => {
       if (data != undefined) {

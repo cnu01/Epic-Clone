@@ -1,16 +1,13 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../context/CartContext";
+import { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { Navbar } from "../Header/Navbar";
-import "./Cart.css";
-export const Cart = () => {
+import "./Purchased.css";
+export const Purchased = () => {
   const [cartCount, setCartCount] = useState(0);
   const [mainData, setMainData] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
-  const { handleFinalCartItem, handleFinalCartAmount } =
-    useContext(CartContext);
   useEffect(() => {
     getData();
   }, []);
@@ -19,32 +16,13 @@ export const Cart = () => {
     mainData.forEach((item) => {
       sum += item.price.mainPrice;
     });
-    handleFinalCartItem(mainData.map((item) => item._id));
-    handleFinalCartAmount(sum);
     setTotalAmount(sum);
     setCartCount(mainData.length);
   }, [mainData]);
 
-  const removeItem = (id) => {
-    console.log("id", id);
-    axios
-      .get(`http://localhost:2345/cart/remove/${id}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
-      .then((res) => res)
-      .then(({ data }) => {
-        console.log("remove item ", data);
-        setMainData(data.data);
-      })
-      .catch((err) => {
-        console.log("Error ".err);
-      });
-  };
   const getData = () => {
     axios
-      .get("http://localhost:2345/cart", {
+      .get("http://localhost:2345/purchased", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -62,16 +40,16 @@ export const Cart = () => {
     <div>
       <Header />
       <Navbar />
-      <div className="cart_main_container">
-        <h2>My Cart</h2>
+      <div className="purchased_main_container">
+        <h2>My Orders History</h2>
         <br />
-        <div className="cart_inner_box">
+        <div className="purchased_inner_box">
           {cartCount == 0 ? (
-            <div className="cart_item_content cart_item_empty">
+            <div className="purchased_item_content purchased_item_empty">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="cart_empty_svg"
+                  class="purchased_empty_svg"
                   viewBox="0 0 45 52"
                 >
                   <g fill="none" fill-rule="evenodd">
@@ -89,59 +67,34 @@ export const Cart = () => {
                   </g>
                 </svg>
 
-                <p>Your cart is empty.</p>
-                <p className="cart_empty_p">Shop for Games & Apps</p>
+                <p>Your have not bought anything.</p>
+                <p className="purchased_empty_p">Shop for Games & Apps</p>
               </div>
             </div>
           ) : (
             <>
-              <div className="cart_item_container">
+              <div className="purchased_item_container">
                 {mainData.map((item) => {
                   return (
-                    <div className="cart_item_content">
+                    <div className="purchased_item_content">
                       <div>
                         <img src={item.cardImage} />
                       </div>
                       <div>
-                        <a className="cart_float_left">{item.title}</a>
-                        <a className="cart_float_right">
+                        <a className="purchased_float_left">{item.title}</a>
+                        <a className="purchased_float_right">
                           ₹{item.price.mainPrice}
                         </a>
-                        <div className="cart_remove_btn">
-                          <a onClick={() => removeItem(item._id)}>
-                            &minus; Remove
-                          </a>
-                        </div>
                       </div>
                     </div>
                   );
                 })}
               </div>
-              <div className="cart_item_price">
-                <h3>Games and Apps Summary</h3>
-                <p>
-                  <a>Price</a>
-                  <a className="cart_float_right">₹{totalAmount}.00</a>
-                </p>
-                <p>
-                  <a>Taxes</a>
-                  <a className="cart_float_right">Calculated at Checkout</a>
-                </p>
-                <hr />
-                <p>
-                  <a>Subtotal</a>
-                  <a className="cart_float_right">₹{totalAmount}.00</a>
-                </p>
-                <Link to="/checkout">
-                  <button className="get-btn cart_checkout_btn">
-                    CHECK OUT
-                  </button>
-                </Link>
-              </div>
             </>
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

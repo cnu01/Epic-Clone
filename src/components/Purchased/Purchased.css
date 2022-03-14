@@ -2,40 +2,40 @@ body {
   background-color: #121212;
 }
 
-.cart_main_container {
+.purchased_main_container {
   height: fit-content;
   width: 70vw;
   margin: 0px auto;
   color: aliceblue;
 }
-.cart_float_left {
+.purchased_float_left {
   float: left;
 }
-.cart_float_right {
+.purchased_float_right {
   float: right;
 }
-.cart_inner_box {
+.purchased_inner_box {
   display: flex;
   flex-direction: row;
 }
-.cart_inner_box > div {
+.purchased_inner_box > div {
   padding: 20px;
   color: aliceblue;
 }
-.cart_inner_box > div:nth-child(1) {
+.purchased_inner_box > div:nth-child(1) {
   width: 65vw;
 }
-.cart_inner_box > div:nth-child(2) {
+.purchased_inner_box > div:nth-child(2) {
   width: 35vw;
 }
-.cart_item_container {
+.purchased_item_container {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.cart_item_content {
+.purchased_item_content {
   height: 100%;
   width: 100%;
   background-color: #202020;
@@ -45,54 +45,48 @@ body {
   padding: 3px;
 }
 
-.cart_item_content > div:nth-child(2) {
+.purchased_item_content > div:nth-child(2) {
   padding: 10px;
   width: 80%;
   height: 100%;
 }
 
-.cart_item_content img {
+.purchased_item_content img {
   height: 180px;
   width: 150px;
 }
 
-.cart_remove_btn {
+.purchased_remove_btn {
   display: flex;
   justify-content: end;
   align-items: flex-end;
   margin-top: 130px;
 }
-.cart_remove_btn > a {
+.purchased_remove_btn > a {
   padding: 5px 10px 5px 5px;
   border: 1px solid rgba(99, 96, 96, 0.486);
   cursor: pointer;
 }
 
-.cart_checkout_btn {
+.purchased_checkout_btn {
   color: white;
   font-weight: bold;
   font-size: 12px;
 }
-.cart_item_empty {
+.purchased_item_empty {
   background-color: #121212;
 }
-.cart_item_empty > div {
+.purchased_item_empty > div {
   margin: 0px auto;
   text-align: center;
   font-size: 26px;
 }
-.cart_empty_svg {
+.purchased_empty_svg {
   height: 80px;
   width: 80px;
   color: #3a3a3a;
 }
-.cart_empty_p {
+.purchased_empty_p {
   font-size: 15px;
   color: #969696;
-}
-
-@media only screen and (max-width: 800px) {
-  .cart_inner_box {
-    flex-wrap: wrap;
-  }
 }

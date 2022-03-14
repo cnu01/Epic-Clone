@@ -8,6 +8,7 @@ import { Wishlist } from "./components/Wishlist/Wishlist";
 import { Checkout } from "./components/Checkout/Checkout";
 import { SignUp } from "./components/SignUp/SignUp";
 import { Login } from "./components/Login/Login";
+import { Purchased } from "./components/Purchased/Purchased";
 function App() {
   return (
     <div className="App">
@@ -18,8 +19,9 @@ function App() {
         <Route path="/browse" element={<Browse />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/Payment-ref" element={<Checkout />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/game/:id" element={<SinglepageFinal />} />
+        <Route path="/purchased" element={<Purchased />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,17 @@
+.navbar_searchBox {
+  position: absolute;
+  top: 64px;
+  min-height: 0px;
+  max-height: 200px;
+  width: 200px;
+  background-color: #252525;
+  color: #ededed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.navbar_searchBox > div {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+}
